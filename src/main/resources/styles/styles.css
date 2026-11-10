@@ -135,7 +135,7 @@
     -fx-wrap-text: true;
 }
 
-#createAccountButton {
+#createAccountButton, #logInButton {
     -fx-background-color: linear-gradient(to right, #9C51FF, #E061B4);
     -fx-background-radius: 8px;
     -fx-text-fill: #FFFFFF;
@@ -157,13 +157,13 @@
     -fx-padding: 8px 0 0 0;
 }
 
-#optionForSignIn {
+#optionForSignIn, #optionForRegistration {
     -fx-text-fill: #8E94B8;
     -fx-font-size: 25px;
     -fx-alignment: center;
 }
 
-#linkForSignIn {
+#linkForSignIn, #linkForRegistration {
     -fx-text-fill: #FFFFFF;
     -fx-border-color: transparent;
     -fx-font-size: 18px;
@@ -171,6 +171,6 @@
     -fx-underline: false;
 }
 
-#linkForSignIn:hover {
+#linkForSignIn:hover, #linkForRegistration:hover {
     -fx-text-fill: #9C51FF;
 }

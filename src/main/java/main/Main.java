@@ -13,7 +13,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             // 1. ჩავტვირთოთ FXML ფაილი რესურსების საქაღალდიდან
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/AstroSphere.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Registration.fxml"));
 
             // (სურვილისამებრ) შრიფტის ჩატვირთვა, თუ CSS-ით არ გაქვთ გაწერილი
             Font.loadFont(getClass().getResourceAsStream("/fonts/SS GEO HAKUNA - Regular.otf"), 20);

@@ -1,6 +1,12 @@
 package controllers;
+import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -12,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 public class fxmlController {
 	@FXML
@@ -74,6 +81,12 @@ public class fxmlController {
 	@FXML
 	private Hyperlink linkForSignIn;
 	
+	@FXML
+	private void toSignIn(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/logIn.fxml"));
+		Scene currentScene = ((Node) event.getSource()).getScene();
+		currentScene.setRoot(root);
+	}
 	
 	
 }

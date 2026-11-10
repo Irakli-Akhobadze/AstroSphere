@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="background" stylesheets="@../styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="900.0" prefHeight="796.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="background" fx:controller="controllers.fxmlController" stylesheets="@../styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="900.0" prefHeight="796.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <HBox fx:id="mainLayout" alignment="CENTER" spacing="35.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
       <children>
@@ -34,20 +34,19 @@
         </VBox>
         <VBox fx:id="rightLayout" alignment="CENTER_LEFT" prefWidth="560.0" maxWidth="650.0" minWidth="0.0" HBox.hgrow="ALWAYS">
           <children>
-            <ImageView fx:id="rightLayoutImage" fitHeight="65.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true"/>
             <Label fx:id="rightLayoutLabel1" text="რეგისტრაცია"/>
             <Label fx:id="rightLayoutLabel2" text="გახდი დაუვიწყარი მოგზაურობის მონაწილე" wrapText="true"/>
             <TextField styleClass="rightLayoutTextField" promptText="სრული სახელი" maxWidth="1.7976931348623157E308"/>
             <TextField styleClass="rightLayoutTextField" promptText="ზედმეტსახელი" maxWidth="1.7976931348623157E308"/>
             <TextField styleClass="rightLayoutTextField" promptText="ელ-ფოსტა" maxWidth="1.7976931348623157E308"/>
             <PasswordField fx:id="passwordField" promptText="პაროლი" maxWidth="1.7976931348623157E308"/>
-            <PasswordField fx:id="confirmPassword" promptText="დაადასტურე პაროლო" maxWidth="1.7976931348623157E308"/>
+            <PasswordField fx:id="confirmPassword" promptText="დაადასტურე პაროლი" maxWidth="1.7976931348623157E308"/>
             <Label fx:id="passwordLabel" text="პაროლი უნდა შეიცავდეს: 8+ სიმბოლოს, 1 ასოს მაღალ რეგისტრში და 1 ციფრს" wrapText="true"/>
             <Button fx:id="createAccountButton" mnemonicParsing="false" text="შექმენი ანგარიში" maxWidth="1.7976931348623157E308"/>
             <VBox fx:id="signInOpts" alignment="CENTER">
               <children>
                 <Label fx:id="optionForSignIn" text="უკვე ხარ ჩვენი მომხმარებელი?"/>
-                <Hyperlink fx:id="linkForSignIn" text="სისტემაში შესვლა"/>
+                <Hyperlink fx:id="linkForSignIn" onAction="#toSignIn" text="სისტემაში შესვლა"/>
               </children>
             </VBox>
           </children>
