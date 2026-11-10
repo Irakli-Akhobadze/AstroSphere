@@ -1,6 +1,6 @@
 @font-face {
-	font-family: "GeorgianFont";
-	src: url("../fonts/GeoFont.otf");
+    font-family: 'SS Geo Hakuna';
+    src: url('../fonts/ss_geo_hakuna.otf');
 }
 
 #background {
@@ -8,24 +8,34 @@
     -fx-background-size: cover;
     -fx-background-position: center center;
     -fx-background-repeat: no-repeat;
-    -fx-font-family: "GeorgianFont";
+    -fx-background-color: #0b0b16;
+    -fx-font-family: 'SS Geo Hakuna';
+}
+
+
+#decoration {
+    -fx-background-size: contain;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
 }
 
 #mainLayout {
     -fx-alignment: center;
-    -fx-spacing: 45px;
+    -fx-spacing: 50px;
 }
 
 #leftLayout {
     -fx-alignment: center;
-    -fx-spacing: 12px;
+    -fx-spacing: 15px;
+    -fx-background-color: transparent;
 }
 
 #mainText {
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 26px;
+    -fx-font-size: 32px;
     -fx-font-weight: bold;
     -fx-alignment: center;
+    -fx-text-alignment: center;
 }
 
 #subText {
@@ -37,7 +47,8 @@
 
 #threeItemsBox {
     -fx-alignment: center;
-    -fx-spacing: 15px;
+    -fx-spacing: 25px;
+    -fx-padding: 10px 0 0 0;
 }
 
 .box {
@@ -49,15 +60,9 @@
     -fx-alignment: center;
 }
 
-.small_Logo {
-    -fx-fill: transparent;
-    -fx-stroke: #2E334E;
-    -fx-stroke-width: 1.5;
-}
-
 .small_Label1 {
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 11px;
+    -fx-font-size: 35px;
     -fx-font-weight: bold;
 }
 
@@ -79,16 +84,16 @@
 
 #rightLayoutLabel1 {
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 24px;
+    -fx-font-size: 36px;
     -fx-font-weight: bold;
 }
 
 #rightLayoutLabel2 {
     -fx-text-fill: #8E94B8;
-    -fx-font-size: 13px;
+    -fx-font-size: 24px;
 }
 
-#rightLayoutTextField, 
+.rightLayoutTextField,  
 #passwordField, 
 #confirmPassword {
     -fx-background-color: #12162A;
@@ -100,9 +105,10 @@
     -fx-prompt-text-fill: #5E647E;
     -fx-pref-height: 42px;
     -fx-padding: 0 14px;
+    -fx-font-size: 23px;
 }
 
-#rightLayoutTextField:focused, 
+.rightLayoutTextField:focused, 
 #passwordField:focused, 
 #confirmPassword:focused {
     -fx-border-color: #7B61FF;
@@ -111,16 +117,15 @@
 
 #passwordLabel {
     -fx-text-fill: #7D83A4;
-    -fx-font-size: 11px;
+    -fx-font-size: 20px;
 }
-
 
 #createAccountButton {
     -fx-background-color: linear-gradient(to right, #9C51FF, #E061B4);
     -fx-background-radius: 8px;
     -fx-text-fill: #FFFFFF;
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
+    -fx-font-size: 30px;
     -fx-pref-height: 46px;
     -fx-cursor: hand;
 }

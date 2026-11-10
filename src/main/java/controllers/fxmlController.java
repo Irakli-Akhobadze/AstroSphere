@@ -71,7 +71,7 @@ public class fxmlController {
 	private VBox signInOpts;
 	
 	@FXML
-	private Label optionsForSignIn;
+	private Label optionForSignIn;
 	
 	@FXML
 	private Hyperlink linkForSignIn;

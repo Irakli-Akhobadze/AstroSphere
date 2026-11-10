@@ -5,78 +5,92 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 
-<AnchorPane  fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="796.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="background" stylesheets="@../styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="900.0" prefHeight="796.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="mainLayout" layoutX="51.0" layoutY="51.0" prefHeight="695.0" prefWidth="1088.0">
+      <HBox fx:id="mainLayout" alignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" HBox.hgrow="ALWAYS">
          <children>
-            <VBox fx:id="leftLayout" prefHeight="695.0" prefWidth="445.0">
+            <VBox fx:id="leftLayout" alignment="CENTER" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="imageForLeft" fitHeight="297.0" fitWidth="443.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="mainText" prefHeight="125.0" prefWidth="447.0" text="" />
-                  <Label fx:id="subText" prefHeight="88.0" prefWidth="444.0" text="Label" />
-                  <ImageView fx:id="decoration" fitHeight="150.0" fitWidth="446.0" pickOnBounds="true" preserveRatio="true" />
-                  <HBox fx:id="threeItemsBox" prefHeight="188.0" prefWidth="444.0">
+                  <ImageView fx:id="imageForLeft" fitHeight="280.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@../images/logo.png"/>
+                     </image>
+                  </ImageView>
+                  <Label fx:id="mainText" text="კეთილი იყოს შენი მობრძანება ასტროსფეროში!" wrapText="true" />
+                  <Label fx:id="subText" text="შექმენი შენი ნათალური რუკა, გაიცანი საკუთარი თავი და თვალი ადევნე უამრავ საინტერესო ინფორმაციას ასტროლოგიის შესახებ" wrapText="true" />
+                  <ImageView fx:id="decoration" fitHeight="180.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/separator.png"/>
+                     </image>
+                  </ImageView>
+                  <HBox fx:id="threeItemsBox" alignment="CENTER" spacing="25.0">
                      <children>
-                        <VBox styleClass="box" prefHeight="200.0" prefWidth="100.0">
+                        <VBox styleClass="box" alignment="CENTER">
                            <children>
-                              <StackPane styleClass="stack" prefHeight="150.0" prefWidth="200.0">
+                              <StackPane styleClass="stack">
                                  <children>
-                                    <Circle styleClass="small_Logo" fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Label styleClass="small_Label1" text="Label" />
-                                    <Label styleClass="small_Label2" text="Label" />
+                                    <ImageView fitWidth="42" fitHeight="42" preserveRatio="true">
+                                       <image><Image url="@../images/icon1.png"/></image>
+                                    </ImageView>
                                  </children>
                               </StackPane>
+                              <Label styleClass="small_Label1" text="Personalized" />
+                              <Label styleClass="small_Label2" text="Horoscopes" />
                            </children>
                         </VBox>
-                        <VBox styleClass="box" prefHeight="200.0" prefWidth="100.0">
+                        <VBox styleClass="box" alignment="CENTER">
                            <children>
-                              <StackPane styleClass="stack" prefHeight="150.0" prefWidth="200.0">
+                              <StackPane styleClass="stack">
                                  <children>
-                                    <Circle styleClass="small_Logo" fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Label styleClass="small_Label1" text="Label" />
-                                    <Label styleClass="small_Label2" text="Label" />
+                                    <ImageView fitWidth="42" fitHeight="42" preserveRatio="true">
+                                       <image><Image url="@../images/icon2.png"/></image>
+                                    </ImageView>
                                  </children>
                               </StackPane>
+                              <Label styleClass="small_Label1" text="Birth Chart" />
+                              <Label styleClass="small_Label2" text="Analysis" />
                            </children>
                         </VBox>
-                        <VBox styleClass="box" prefHeight="200.0" prefWidth="100.0">
+                        <VBox styleClass="box" alignment="CENTER">
                            <children>
-                              <StackPane styleClass="stack" prefHeight="150.0" prefWidth="200.0">
+                              <StackPane styleClass="stack">
                                  <children>
-                                    <Circle styleClass="small_Logo" fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Label styleClass="small_Label1" text="Label" />
-                                    <Label styleClass="small_Label2" text="Label" />
+                                    <ImageView fitWidth="42" fitHeight="42" preserveRatio="true">
+                                       <image><Image url="@../images/icon3.png"/></image>
+                                    </ImageView>
                                  </children>
                               </StackPane>
+                              <Label styleClass="small_Label1" text="Astrology" />
+                              <Label styleClass="small_Label2" text="Community" />
                            </children>
                         </VBox>
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <VBox fx:id="rightLayout" prefHeight="695.0" prefWidth="644.0">
+            <VBox fx:id="rightLayout" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="rightLayoutImage" fitHeight="121.0" fitWidth="647.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="rightLayoutLabel1" prefHeight="54.0" prefWidth="648.0" text="Label" />
-                  <Label fx:id="rightLayoutLabel2" prefHeight="46.0" prefWidth="649.0" text="Label" />
-                  <TextField fx:id="rightLayoutTextField" />
-                  <TextField fx:id="rightLayoutTextField" />
-                  <TextField fx:id="rightLayoutTextField" />
-                  <PasswordField fx:id="passwordField" />
-                  <PasswordField fx:id="confirmPassword" />
-                  <Label fx:id="passwordLabel" prefHeight="41.0" prefWidth="649.0" text="Label" />
-                  <Button fx:id="createAccountButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="650.0" text="Button" />
-                  <VBox fx:id="signInOpts" prefHeight="200.0" prefWidth="100.0">
+                  <ImageView fx:id="rightLayoutImage" fitHeight="80.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="rightLayoutLabel1" text="რეგისტრაცია" />
+                  <Label fx:id="rightLayoutLabel2" text="გახდი დაუვიწყარი მოგზაურობის მონაწილე" />
+                  <TextField styleClass="rightLayoutTextField" promptText="სრული სახელი" />
+                  <TextField styleClass="rightLayoutTextField" promptText="ზედმეტსახელი" />
+                  <TextField styleClass="rightLayoutTextField" promptText="ელ-ფოსტა" />
+                  <PasswordField fx:id="passwordField" promptText="პაროლი" />
+                  <PasswordField fx:id="confirmPassword" promptText="დაადასტურე პაროლო" />
+                  <Label fx:id="passwordLabel" text="პაროლი უნდა შეიცავდეს: 8+ სიმბოლოს, 1 ასოს მაღალ რეგისტრში და 1 ციფრს" wrapText="true" />
+                  <Button fx:id="createAccountButton" mnemonicParsing="false" text="შექმენი ანგარიში" VBox.vgrow="ALWAYS" />
+                  <VBox fx:id="signInOpts" alignment="CENTER">
                      <children>
-                        <Label fx:id="optionForSignIn" prefHeight="57.0" prefWidth="649.0" text="Label" />
-                        <Hyperlink fx:id="linkForSignIn" prefHeight="47.0" prefWidth="647.0" text="Hyperlink" />
+                        <Label fx:id="optionForSignIn" text="უკვე ხარ ჩვენი მომხმარებელი?" />
+                        <Hyperlink fx:id="linkForSignIn" text="სისტემაში შესვლა" />
                      </children>
                   </VBox>
                </children>
