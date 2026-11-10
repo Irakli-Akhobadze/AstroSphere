@@ -28,6 +28,9 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
             
+            primaryStage.setMinWidth(1100.0);  // მინიმალური სიგანე, რომელზე ქვემოთაც ვეღარ დააპატარავებს
+            primaryStage.setMinHeight(750.0);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

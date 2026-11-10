@@ -38,8 +38,6 @@ public class fxmlController {
 	@FXML
 	private HBox threeItemsBox;
 	
-	
-	
 	@FXML
 	private VBox rightLayout;
 	
