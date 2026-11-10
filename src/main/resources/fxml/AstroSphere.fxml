@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,48 +12,47 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-
-<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="796.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane  fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="796.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox fx:id="mainLayout" layoutX="51.0" layoutY="51.0" prefHeight="695.0" prefWidth="1088.0">
          <children>
             <VBox fx:id="leftLayout" prefHeight="695.0" prefWidth="445.0">
                <children>
                   <ImageView fx:id="imageForLeft" fitHeight="297.0" fitWidth="443.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label prefHeight="125.0" prefWidth="447.0" text="Label" />
-                  <Label prefHeight="88.0" prefWidth="444.0" text="Label" />
-                  <Separator prefWidth="200.0" />
-                  <HBox prefHeight="188.0" prefWidth="444.0">
+                  <Label fx:id="mainText" prefHeight="125.0" prefWidth="447.0" text="" />
+                  <Label fx:id="subText" prefHeight="88.0" prefWidth="444.0" text="Label" />
+                  <ImageView fx:id="decoration" fitHeight="150.0" fitWidth="446.0" pickOnBounds="true" preserveRatio="true" />
+                  <HBox fx:id="threeItemsBox" prefHeight="188.0" prefWidth="444.0">
                      <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
+                        <VBox styleClass="box" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                              <StackPane styleClass="stack" prefHeight="150.0" prefWidth="200.0">
                                  <children>
-                                    <Circle fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Label text="Label" />
-                                    <Label text="Label" />
+                                    <Circle styleClass="small_Logo" fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label styleClass="small_Label1" text="Label" />
+                                    <Label styleClass="small_Label2" text="Label" />
                                  </children>
                               </StackPane>
                            </children>
                         </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
+                        <VBox styleClass="box" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                              <StackPane styleClass="stack" prefHeight="150.0" prefWidth="200.0">
                                  <children>
-                                    <Circle fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Label text="Label" />
-                                    <Label text="Label" />
+                                    <Circle styleClass="small_Logo" fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label styleClass="small_Label1" text="Label" />
+                                    <Label styleClass="small_Label2" text="Label" />
                                  </children>
                               </StackPane>
                            </children>
                         </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
+                        <VBox styleClass="box" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                              <StackPane styleClass="stack" prefHeight="150.0" prefWidth="200.0">
                                  <children>
-                                    <Circle fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
-                                    <Label text="Label" />
-                                    <Label text="Label" />
+                                    <Circle styleClass="small_Logo" fill="DODGERBLUE" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label styleClass="small_Label1" text="Label" />
+                                    <Label styleClass="small_Label2" text="Label" />
                                  </children>
                               </StackPane>
                            </children>
@@ -63,23 +61,22 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox prefHeight="695.0" prefWidth="644.0">
+            <VBox fx:id="rightLayout" prefHeight="695.0" prefWidth="644.0">
                <children>
-                  <ImageView fitHeight="121.0" fitWidth="647.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label prefHeight="54.0" prefWidth="648.0" text="Label" />
-                  <Label prefHeight="46.0" prefWidth="649.0" text="Label" />
-                  <TextField />
-                  <TextField />
-                  <TextField />
-                  <TextField />
-                  <PasswordField />
-                  <PasswordField />
-                  <Label prefHeight="41.0" prefWidth="649.0" text="Label" />
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="650.0" text="Button" />
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <ImageView fx:id="rightLayoutImage" fitHeight="121.0" fitWidth="647.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="rightLayoutLabel1" prefHeight="54.0" prefWidth="648.0" text="Label" />
+                  <Label fx:id="rightLayoutLabel2" prefHeight="46.0" prefWidth="649.0" text="Label" />
+                  <TextField fx:id="rightLayoutTextField" />
+                  <TextField fx:id="rightLayoutTextField" />
+                  <TextField fx:id="rightLayoutTextField" />
+                  <PasswordField fx:id="passwordField" />
+                  <PasswordField fx:id="confirmPassword" />
+                  <Label fx:id="passwordLabel" prefHeight="41.0" prefWidth="649.0" text="Label" />
+                  <Button fx:id="createAccountButton" mnemonicParsing="false" prefHeight="70.0" prefWidth="650.0" text="Button" />
+                  <VBox fx:id="signInOpts" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Label prefHeight="57.0" prefWidth="649.0" text="Label" />
-                        <Hyperlink prefHeight="47.0" prefWidth="647.0" text="Hyperlink" />
+                        <Label fx:id="optionForSignIn" prefHeight="57.0" prefWidth="649.0" text="Label" />
+                        <Hyperlink fx:id="linkForSignIn" prefHeight="47.0" prefWidth="647.0" text="Hyperlink" />
                      </children>
                   </VBox>
                </children>

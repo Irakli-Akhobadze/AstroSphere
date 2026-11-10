@@ -1,4 +1,155 @@
-.background {
-	-fx-background-color: #080B20;
-	-fx-font-family: "Arial";
+@font-face {
+	font-family: "GeorgianFont";
+	src: url("../fonts/GeoFont.otf");
+}
+
+#background {
+    -fx-background-image: url("../images/backgroundImage.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: "GeorgianFont";
+}
+
+#mainLayout {
+    -fx-alignment: center;
+    -fx-spacing: 45px;
+}
+
+#leftLayout {
+    -fx-alignment: center;
+    -fx-spacing: 12px;
+}
+
+#mainText {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+#subText {
+    -fx-text-fill: #9FA4BC;
+    -fx-font-size: 13px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+
+#threeItemsBox {
+    -fx-alignment: center;
+    -fx-spacing: 15px;
+}
+
+.box {
+    -fx-alignment: center;
+    -fx-spacing: 6px;
+}
+
+.stack {
+    -fx-alignment: center;
+}
+
+.small_Logo {
+    -fx-fill: transparent;
+    -fx-stroke: #2E334E;
+    -fx-stroke-width: 1.5;
+}
+
+.small_Label1 {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.small_Label2 {
+    -fx-text-fill: #8E94B8;
+    -fx-font-size: 10px;
+}
+
+#rightLayout {
+    -fx-background-color: rgba(13, 17, 33, 0.78); 
+    -fx-background-radius: 20px;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-radius: 20px;
+    -fx-border-width: 1px;
+    -fx-padding: 30px 40px;
+    -fx-spacing: 12px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 25, 0, 0, 10);
+}
+
+#rightLayoutLabel1 {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+#rightLayoutLabel2 {
+    -fx-text-fill: #8E94B8;
+    -fx-font-size: 13px;
+}
+
+#rightLayoutTextField, 
+#passwordField, 
+#confirmPassword {
+    -fx-background-color: #12162A;
+    -fx-background-radius: 8px;
+    -fx-border-color: #252A42;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #5E647E;
+    -fx-pref-height: 42px;
+    -fx-padding: 0 14px;
+}
+
+#rightLayoutTextField:focused, 
+#passwordField:focused, 
+#confirmPassword:focused {
+    -fx-border-color: #7B61FF;
+    -fx-background-color: #171B35;
+}
+
+#passwordLabel {
+    -fx-text-fill: #7D83A4;
+    -fx-font-size: 11px;
+}
+
+
+#createAccountButton {
+    -fx-background-color: linear-gradient(to right, #9C51FF, #E061B4);
+    -fx-background-radius: 8px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-height: 46px;
+    -fx-cursor: hand;
+}
+
+#createAccountButton:hover {
+    -fx-background-color: linear-gradient(to right, #AA63FF, #EB72C0);
+    -fx-effect: dropshadow(three-pass-box, rgba(156, 81, 255, 0.4), 12, 0, 0, 0);
+}
+
+#signInOpts {
+    -fx-alignment: center;
+    -fx-spacing: 4px;
+    -fx-padding: 8px 0 0 0;
+}
+
+#optionForSignIn {
+    -fx-text-fill: #8E94B8;
+    -fx-font-size: 12px;
+    -fx-alignment: center;
+}
+
+#linkForSignIn {
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: transparent;
+    -fx-font-size: 12px;
+    -fx-alignment: center;
+    -fx-underline: false;
+}
+
+#linkForSignIn:hover {
+    -fx-text-fill: #9C51FF;
 }
