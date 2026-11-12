@@ -97,4 +97,8 @@ public class UserDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public static boolean userExists(String email, String passwordHash) {
+		
+	}
 }
