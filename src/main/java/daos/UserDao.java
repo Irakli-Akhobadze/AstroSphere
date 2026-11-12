@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import Validations.EmailValidation;
 import Validations.PasswordValidation;
 import databaseConnection.databaseConnector;
 
@@ -29,7 +30,7 @@ public class UserDao {
 	public static void setEmail(String email, int id) {
 		String query = "update users set email = ? where userId = ?";
 		
-		if (email == null || !email.contains("@")) {
+		if (!EmailValidation.isValid(email)) {
 			System.out.println("იმეილი არ არსებობს, ან არასწორი ფორმატია გამოყენებული!");
 		}
 		
@@ -52,9 +53,7 @@ public class UserDao {
 				SessionFactory sessionFactory = configuration.configure().buildSessionFactory();
 				Session session = sessionFactory.openSession();
 				
-				
-				
-				) 
+			) 
 		{
 			transaction = session.beginTransaction();
 			

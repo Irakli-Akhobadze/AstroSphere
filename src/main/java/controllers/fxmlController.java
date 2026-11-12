@@ -82,6 +82,11 @@ public class fxmlController {
 	private Hyperlink linkForSignIn;
 	
 	@FXML
+	private void clickRegistrationBtn() {
+		
+	}
+	
+	@FXML
 	private void toSignIn(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/logIn.fxml"));
 		Scene currentScene = ((Node) event.getSource()).getScene();
