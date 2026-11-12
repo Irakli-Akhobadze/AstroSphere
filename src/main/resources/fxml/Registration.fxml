@@ -36,12 +36,12 @@
           <children>
             <Label fx:id="rightLayoutLabel1" text="რეგისტრაცია"/>
             <Label fx:id="rightLayoutLabel2" text="გახდი დაუვიწყარი მოგზაურობის მონაწილე" wrapText="true"/>
-            <TextField styleClass="rightLayoutTextField" promptText="სახელი" maxWidth="1.7976931348623157E308"/>
-            <TextField styleClass="rightLayoutTextField" promptText="გვარი" maxWidth="1.7976931348623157E308"/>
-            <TextField styleClass="rightLayoutTextField" promptText="ზედმეტსახელი" maxWidth="1.7976931348623157E308"/>
-            <TextField styleClass="rightLayoutTextField" promptText="ელ-ფოსტა" maxWidth="1.7976931348623157E308"/>
+            <TextField styleClass="rightLayoutTextField" fx:id="name" promptText="სახელი" maxWidth="1.7976931348623157E308"/>
+            <TextField styleClass="rightLayoutTextField" fx:id="lastN" promptText="გვარი" maxWidth="1.7976931348623157E308"/>
+            <TextField styleClass="rightLayoutTextField" fx:id="userName" promptText="ზედმეტსახელი" maxWidth="1.7976931348623157E308"/>
+            <TextField styleClass="rightLayoutTextField" fx:id="emailField" promptText="ელ-ფოსტა" maxWidth="1.7976931348623157E308"/>
             <PasswordField fx:id="passwordField" promptText="პაროლი" maxWidth="1.7976931348623157E308"/>
-            <PasswordField fx:id="confirmPassword" promptText="დაადასტურე პაროლი" maxWidth="1.7976931348623157E308"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="დაადასტურე პაროლი" maxWidth="1.7976931348623157E308"/>
             <Label fx:id="passwordLabel" text="პაროლი უნდა შეიცავდეს: 8+ სიმბოლოს, 1 ასოს მაღალ რეგისტრში და 1 ციფრს" wrapText="true"/>
             <Button fx:id="createAccountButton" onAction="#clickRegistrationBtn" mnemonicParsing="false" text="შექმენი ანგარიში" maxWidth="1.7976931348623157E308"/>
             <VBox fx:id="signInOpts" alignment="CENTER">

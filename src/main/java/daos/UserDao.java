@@ -20,6 +20,8 @@ public class UserDao {
 		try (PreparedStatement preparedStm = databaseConnector.getConnection().prepareStatement(query)) {
 			preparedStm.setString(1, userName);
 			preparedStm.setInt(2, id);
+			
+			preparedStm.executeUpdate();
 		}
 		
 		catch (SQLException e) {
@@ -37,6 +39,8 @@ public class UserDao {
 		try (PreparedStatement preparedStm = databaseConnector.getConnection().prepareStatement(query)) {
 			preparedStm.setString(1, email);
 			preparedStm.setInt(2, id);
+			
+			preparedStm.executeUpdate();
 		}
 		
 		catch(SQLException e) {
@@ -72,6 +76,24 @@ public class UserDao {
 			if (transaction != null) {
 				transaction.rollback();
 			}
+			e.printStackTrace();
+		}
+	}
+	
+	public static void insertInto(String userName, String firstName, String lastName, String passwordHash, String email) {
+		String sqlQuery = "insert into users(userName, firstName, lastName, passwordHash, email) values (?, ?, ?, ?, ?)";
+		
+		try (PreparedStatement preparedStm = databaseConnector.getConnection().prepareStatement(sqlQuery)) {
+			preparedStm.setString(1, userName);
+			preparedStm.setString(2, firstName);
+			preparedStm.setString(3, lastName);
+			preparedStm.setString(4, passwordHash);
+			preparedStm.setString(5, email);
+			
+			preparedStm.executeUpdate();
+		}
+		
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}

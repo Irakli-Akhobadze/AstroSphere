@@ -1,6 +1,8 @@
 package controllers;
 import java.io.IOException;
 
+import Validations.EmailValidation;
+import Validations.PasswordValidation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -61,10 +63,22 @@ public class fxmlController {
 	private TextField rightLayoutTextField;
 	
 	@FXML
+	private TextField name;
+	
+	@FXML
+	private TextField lastN;
+	
+	@FXML
+	private TextField userName;
+	
+	@FXML
+	private TextField emailField;
+	
+	@FXML
 	private PasswordField passwordField;
 	
 	@FXML
-	private PasswordField confirmPassword;
+	private PasswordField confirmPasswordField;
 	
 	@FXML
 	private Label passwordLabel;
@@ -83,7 +97,19 @@ public class fxmlController {
 	
 	@FXML
 	private void clickRegistrationBtn() {
+		String firstName = name.getText();
+		String lastName = lastN.getText();
+		String password = passwordField.getText();
+		String confirmPassword = confirmPasswordField.getText();
+		String email = emailField.getText();
 		
+		if (!PasswordValidation.isValidPassword(password)) {
+			
+		}
+		
+		if (!EmailValidation.isValid(email)) {
+			
+		}
 	}
 	
 	@FXML
