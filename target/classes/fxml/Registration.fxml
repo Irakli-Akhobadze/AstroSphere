@@ -29,19 +29,48 @@
                 <Image url="@../images/separator.png"/>
               </image>
             </ImageView>
-            
           </children>
         </VBox>
         <VBox fx:id="rightLayout" alignment="CENTER_LEFT" prefWidth="560.0" maxWidth="650.0" minWidth="0.0" HBox.hgrow="ALWAYS">
           <children>
             <Label fx:id="rightLayoutLabel1" text="რეგისტრაცია"/>
             <Label fx:id="rightLayoutLabel2" text="გახდი დაუვიწყარი მოგზაურობის მონაწილე" wrapText="true"/>
-            <TextField styleClass="rightLayoutTextField" fx:id="name" promptText="სახელი" maxWidth="1.7976931348623157E308"/>
-            <TextField styleClass="rightLayoutTextField" fx:id="lastN" promptText="გვარი" maxWidth="1.7976931348623157E308"/>
-            <TextField styleClass="rightLayoutTextField" fx:id="userName" promptText="ზედმეტსახელი" maxWidth="1.7976931348623157E308"/>
-            <TextField styleClass="rightLayoutTextField" fx:id="emailField" promptText="ელ-ფოსტა" maxWidth="1.7976931348623157E308"/>
-            <PasswordField fx:id="passwordField" promptText="პაროლი" maxWidth="1.7976931348623157E308"/>
-            <PasswordField fx:id="confirmPasswordField" promptText="დაადასტურე პაროლი" maxWidth="1.7976931348623157E308"/>
+            <VBox spacing="4.0" maxWidth="1.7976931348623157E308">
+              <children>
+                <TextField styleClass="rightLayoutTextField" fx:id="name" promptText="სახელი" maxWidth="1.7976931348623157E308"/>
+                <Label fx:id="nameError" text="სახელი სავალდებულოა" styleClass="error-label" visible="false" managed="false"/>
+              </children>
+            </VBox>
+            <VBox spacing="4.0" maxWidth="1.7976931348623157E308">
+              <children>
+                <TextField styleClass="rightLayoutTextField" fx:id="lastN" promptText="გვარი" maxWidth="1.7976931348623157E308"/>
+                <Label fx:id="lastNameError" text="გვარი სავალდებულოა" styleClass="error-label" visible="false" managed="false"/>
+              </children>
+            </VBox>
+            <VBox spacing="4.0" maxWidth="1.7976931348623157E308">
+              <children>
+                <TextField styleClass="rightLayoutTextField" fx:id="userName" promptText="ზედმეტსახელი" maxWidth="1.7976931348623157E308"/>
+                <Label fx:id="usernameError" text="ზედმეტსახელი სავალდებულოა" styleClass="error-label" visible="false" managed="false"/>
+              </children>
+            </VBox>
+            <VBox spacing="4.0" maxWidth="1.7976931348623157E308">
+              <children>
+                <TextField styleClass="rightLayoutTextField" fx:id="emailField" promptText="ელ-ფოსტა" maxWidth="1.7976931348623157E308"/>
+                <Label fx:id="emailError" text="ელ-ფოსტის ფორმატი არასწორია" styleClass="error-label" visible="false" managed="false"/>
+              </children>
+            </VBox>
+            <VBox spacing="4.0" maxWidth="1.7976931348623157E308">
+              <children>
+                <PasswordField fx:id="passwordField" promptText="პაროლი" maxWidth="1.7976931348623157E308"/>
+                <Label fx:id="passwordError" text="პაროლის ფორმატი არასწორია" styleClass="error-label" visible="false" managed="false"/>
+              </children>
+            </VBox>
+            <VBox spacing="4.0" maxWidth="1.7976931348623157E308">
+              <children>
+                <PasswordField fx:id="confirmPasswordField" promptText="დაადასტურე პაროლი" maxWidth="1.7976931348623157E308"/>
+                <Label fx:id="confirmPasswordError" text="პაროლები არ ემთხვევა ერთმანეთს" styleClass="error-label" visible="false" managed="false"/>
+              </children>
+            </VBox>
             <Label fx:id="passwordLabel" text="პაროლი უნდა შეიცავდეს: 8+ სიმბოლოს, 1 ასოს მაღალ რეგისტრში და 1 ციფრს" wrapText="true"/>
             <Button fx:id="createAccountButton" onAction="#clickRegistrationBtn" mnemonicParsing="false" text="შექმენი ანგარიში" maxWidth="1.7976931348623157E308"/>
             <VBox fx:id="signInOpts" alignment="CENTER">

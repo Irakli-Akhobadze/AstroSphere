@@ -11,7 +11,8 @@ public class databaseConnector {
 	
 	public static Connection getConnection() {
 		
-		try(Connection connection = DriverManager.getConnection(url, root, password)) {
+		try {
+			Connection connection = DriverManager.getConnection(url, root, password);
 			System.out.println("ბაზას წარმატებით დაუკავშირდა!");
 			return connection;
 		}

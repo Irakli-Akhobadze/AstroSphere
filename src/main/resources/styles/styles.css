@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'SS Geo Hakuna';
     src: url('../fonts/ss_geo_hakuna.otf');
@@ -108,7 +109,7 @@
 
 .rightLayoutTextField,
 #passwordField,
-#confirmPassword {
+#confirmPasswordField {
     -fx-background-color: #12162A;
     -fx-background-radius: 8px;
     -fx-border-color: #252A42;
@@ -124,9 +125,19 @@
 
 .rightLayoutTextField:focused,
 #passwordField:focused,
-#confirmPassword:focused {
+#confirmPasswordField:focused {
     -fx-border-color: #7B61FF;
     -fx-background-color: #171B35;
+}
+
+.error {
+    -fx-border-color: #E53935 !important;
+    -fx-border-width: 1.5px !important;
+}
+
+.error-label {
+    -fx-text-fill: #FF5555;
+    -fx-font-size: 16px;
 }
 
 #passwordLabel {
