@@ -9,15 +9,18 @@ public class databaseConnector {
 	private static final String root = "root";
 	private static final String password = "Irakli2007!";
 	
-	public static void getConnection() {
+	public static Connection getConnection() {
 		
-		try(Connection c = DriverManager.getConnection(url, root, password)) {
+		try(Connection connection = DriverManager.getConnection(url, root, password)) {
 			System.out.println("ბაზას წარმატებით დაუკავშირდა!");
+			return connection;
 		}
 		
 		catch(SQLException e) {
 			e.printStackTrace();
 		}
+		
+		return null;
 	}
 	
 	
