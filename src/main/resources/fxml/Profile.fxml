@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane fx:id="MainBox" fx:controller="controllers.ProfileController" prefHeight="750.0" prefWidth="1200.0" minHeight="600.0" minWidth="850.0" stylesheets="@../styles/dashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+ <children>
+  <HBox spacing="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+   <children>
+    <VBox fx:id="LeftVBox" minWidth="190.0" prefWidth="190.0" maxWidth="190.0">
+     <children>
+      <HBox fx:id="logoHbox" alignment="CENTER_LEFT" prefHeight="75.0" spacing="10.0"><children>
+       <ImageView fitHeight="34.0" fitWidth="34.0" preserveRatio="true"><image><Image url="@../images/logoNew.png"/></image></ImageView>
+       <Label text="ასტროსფერო" styleClass="app-name"/>
+      </children></HBox>
+      <VBox spacing="7.0"><VBox.margin><Insets top="18.0"/></VBox.margin><children>
+       <HBox fx:id="hB1" alignment="CENTER_LEFT" styleClass="menu-item"><children><Label text="🏠" styleClass="menu-icon"/><Label text="დაფა" styleClass="menu-text"/></children></HBox>
+       <HBox fx:id="hB2" alignment="CENTER_LEFT" styleClass="menu-item"><children><Label text="◎" styleClass="menu-icon"/><Label text="ნათალური რუკა" styleClass="menu-text"/></children></HBox>
+       <HBox fx:id="hB3" alignment="CENTER_LEFT" styleClass="menu-item"><children><Label text="🌎" styleClass="menu-icon"/><Label text="ამჟამინდელი პოზიციები" styleClass="menu-text" wrapText="true"/></children></HBox>
+       <HBox fx:id="hB4" alignment="CENTER_LEFT" styleClass="menu-item"><children><Label text="📰" styleClass="menu-icon"/><Label text="ბლოგი" styleClass="menu-text"/></children></HBox>
+       <HBox fx:id="hB5" alignment="CENTER_LEFT" styleClass="menu-item"><children><Label text="📝" styleClass="menu-icon"/><Label text="ჩემი ბლოგები" styleClass="menu-text"/></children></HBox>
+       <HBox fx:id="hB6" alignment="CENTER_LEFT" styleClass="menu-item active"><children><Label text="👤" styleClass="menu-icon"/><Label text="პროფილი" styleClass="menu-text"/></children></HBox>
+      </children></VBox>
+      <VBox VBox.vgrow="ALWAYS"/>
+      <HBox fx:id="hB7" alignment="CENTER_LEFT" styleClass="menu-item"><children><Label text="🚪" styleClass="menu-icon"/><Label text="გასვლა" styleClass="menu-text"/></children></HBox>
+      <VBox prefHeight="15.0"/>
+     </children>
+    </VBox>
+    <VBox fx:id="RightVBox" spacing="20.0" HBox.hgrow="ALWAYS"><padding><Insets top="30.0" right="30.0" bottom="30.0" left="30.0"/></padding><children>
+     <VBox spacing="5.0"><children><Label text="ჩემი პროფილი" styleClass="welcome-title"/><Label text="შენი ანგარიში და შენ მიერ შექმნილი ბლოგები." styleClass="welcome-subtitle"/></children></VBox>
+     <VBox spacing="8.0" styleClass="profile-card"><padding><Insets top="22.0" right="24.0" bottom="22.0" left="24.0"/></padding><children>
+      <Label text="მომხმარებელი" styleClass="field-label"/><Label fx:id="profileName" styleClass="profile-name"/>
+      <HBox spacing="10.0" alignment="CENTER_LEFT"><children><Label text="შექმნილი ბლოგები:" styleClass="profile-count-label"/><Label fx:id="blogCount" text="0" styleClass="profile-count"/></children></HBox>
+     </children></VBox>
+     <VBox spacing="12.0" styleClass="result-panel" VBox.vgrow="ALWAYS"><padding><Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/></padding><children>
+      <Label text="ჩემი ბლოგები" styleClass="section-title"/><ListView fx:id="profileBlogs" VBox.vgrow="ALWAYS"/><Label fx:id="profileStatus" styleClass="status-label" wrapText="true"/>
+     </children></VBox>
+    </children></VBox>
+   </children>
+  </HBox>
+ </children>
+</AnchorPane>

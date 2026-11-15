@@ -25,7 +25,7 @@ public class DashboardController {
         hB3.setOnMouseClicked(event -> open("/fxml/DailyPositions.fxml"));
         hB4.setOnMouseClicked(event -> open("/fxml/MyBlogs.fxml"));
         hB5.setOnMouseClicked(event -> open("/fxml/MyBlogs.fxml"));
-        hB6.setOnMouseClicked(event -> setActiveMenu(hB6));
+        hB6.setOnMouseClicked(event -> open("/fxml/Profile.fxml"));
         hB7.setOnMouseClicked(event -> logout());
         birthChartCard.setOnMouseClicked(event -> open("/fxml/BirthChart.fxml"));
         dailyPositionsCard.setOnMouseClicked(event -> open("/fxml/DailyPositions.fxml"));

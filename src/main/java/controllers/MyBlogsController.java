@@ -27,6 +27,7 @@ public class MyBlogsController {
         hB2.setOnMouseClicked(e -> open("/fxml/BirthChart.fxml"));
         hB3.setOnMouseClicked(e -> open("/fxml/DailyPositions.fxml"));
         hB4.setOnMouseClicked(e -> {}); hB5.setOnMouseClicked(e -> {});
+        hB6.setOnMouseClicked(e -> open("/fxml/Profile.fxml"));
         hB7.setOnMouseClicked(e -> { UserSession.clear(); open("/fxml/logIn.fxml"); });
         blogsList.getSelectionModel().selectedItemProperty().addListener((o,oldValue,value) -> {
             selected=value;

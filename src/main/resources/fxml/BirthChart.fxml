@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="MainBox"
+            fx:controller="controllers.BirthChartController"
+            prefHeight="780.0"
+            prefWidth="1250.0"
+            minHeight="650.0"
+            minWidth="1000.0"
+            stylesheets="@../styles/birthchart.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+        <HBox spacing="0.0"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0">
+
+            <children>
+                <VBox fx:id="LeftVBox" minWidth="190.0" prefWidth="190.0" maxWidth="190.0">
+                    <children>
+                        <HBox fx:id="logoHbox" alignment="CENTER_LEFT" prefHeight="75.0" spacing="10.0">
+                            <children>
+                                <ImageView fx:id="logo" fitHeight="34.0" fitWidth="34.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/logoNew.png"/>
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="appName" text="ასტროსფერო" styleClass="app-name"/>
+                            </children>
+                        </HBox>
+
+                        <VBox spacing="7.0">
+                            <VBox.margin><Insets top="18.0"/></VBox.margin>
+                            <children>
+                                <HBox fx:id="hB1" alignment="CENTER_LEFT" styleClass="menu-item">
+                                    <children>
+                                        <Label text="🏠" styleClass="menu-icon"/>
+                                        <Label text="დაფა" styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+                                <HBox fx:id="hB2" alignment="CENTER_LEFT" styleClass="menu-item active">
+                                    <children>
+                                        <Label text="◎" styleClass="menu-icon"/>
+                                        <Label text="ნათალური რუკა" styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+                                <HBox fx:id="hB3" alignment="CENTER_LEFT" styleClass="menu-item">
+                                    <children>
+                                        <Label text="🌎" styleClass="menu-icon"/>
+                                        <Label text="ამჟამინდელი პოზიციები" styleClass="menu-text" wrapText="true"/>
+                                    </children>
+                                </HBox>
+                                <HBox fx:id="hB4" alignment="CENTER_LEFT" styleClass="menu-item">
+                                    <children>
+                                        <Label text="📰" styleClass="menu-icon"/>
+                                        <Label text="ბლოგი" styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+                                <HBox fx:id="hB5" alignment="CENTER_LEFT" styleClass="menu-item">
+                                    <children>
+                                        <Label text="📝" styleClass="menu-icon"/>
+                                        <Label text="ჩემი ბლოგები" styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+                                <HBox fx:id="hB6" alignment="CENTER_LEFT" styleClass="menu-item">
+                                    <children>
+                                        <Label text="👤" styleClass="menu-icon"/>
+                                        <Label text="პროფილი" styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <Region VBox.vgrow="ALWAYS"/>
+                        <HBox fx:id="hB7" alignment="CENTER_LEFT" styleClass="menu-item">
+                            <children>
+                                <Label text="🚪" styleClass="menu-icon"/>
+                                <Label text="გასვლა" styleClass="menu-text"/>
+                            </children>
+                        </HBox>
+                        <Region minHeight="15.0"/>
+                    </children>
+                </VBox>
+
+                <VBox fx:id="RightVBox" spacing="20.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="ნათალური რუკა" styleClass="page-title"/>
+                                <Label text="შეიყვანე დაბადების მონაცემები და შეისწავლე შენი პირადი რუკა"
+                                       styleClass="page-subtitle" wrapText="true"/>
+                            </children>
+                        </VBox>
+
+                        <HBox spacing="14.0" alignment="TOP_LEFT" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox fx:id="birthForm" spacing="13.0" prefWidth="285.0" minWidth="265.0"
+                                      maxWidth="300.0" styleClass="birth-form">
+                                    <children>
+                                        <Label text="დაბადების დეტალები" styleClass="form-title"/>
+
+                                        <VBox spacing="6.0">
+                                            <Label text="სრული სახელი" styleClass="field-label"/>
+                                            <TextField fx:id="fullNameField" promptText="შეიყვანე შენი სახელი და გვარი"
+                                                       styleClass="birth-field"/>
+                                            <Label fx:id="fullNameError" styleClass="field-error"
+                                                   visible="false" managed="false"/>
+                                        </VBox>
+
+                                        <VBox spacing="6.0">
+                                            <Label text="დაბადების თარიღი" styleClass="field-label"/>
+                                            <DatePicker fx:id="dateOfBirthPicker" promptText="აირჩიე თარიღი"
+                                                        styleClass="birth-date" maxWidth="Infinity"/>
+                                            <Label fx:id="dateError" styleClass="field-error"
+                                                   visible="false" managed="false"/>
+                                        </VBox>
+
+                                        <VBox spacing="6.0">
+                                            <Label text="დაბადების დრო" styleClass="field-label"/>
+                                            <TextField fx:id="timeOfBirthField" promptText="HH:mm (მაგ. 14:35)"
+                                                       styleClass="birth-field"/>
+                                            <Label fx:id="timeError" styleClass="field-error"
+                                                   visible="false" managed="false"/>
+                                        </VBox>
+
+                                        <VBox spacing="6.0">
+                                            <Label text="დაბადების ადგილი" styleClass="field-label"/>
+                                            <TextField fx:id="birthPlaceField" promptText="ქალაქი, ქვეყანა"
+                                                       styleClass="birth-field"/>
+                                            <Label fx:id="placeError" styleClass="field-error"
+                                                   visible="false" managed="false"/>
+                                        </VBox>
+
+                                        <Button fx:id="generateButton" text="ნათალური რუკის შექმნა"
+                                                onAction="#generateChart" styleClass="primary-button"
+                                                maxWidth="Infinity"/>
+
+                                        <Label fx:id="statusLabel" styleClass="status-label"
+                                               wrapText="true"/>
+                                        <Label text="ზუსტი დრო მნიშვნელოვანია ასცენდენტისთვის. გამოთვლა იყენებს მიახლოებით ორბიტულ მოდელს და თანაბარ სახლებს. ადგილის მონაცემები: OpenStreetMap."
+                                               styleClass="form-note" wrapText="true"/>
+                                    </children>
+                                </VBox>
+
+                                <VBox fx:id="resultPanel" spacing="12.0" HBox.hgrow="ALWAYS"
+                                      styleClass="result-panel">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                            <children>
+                                                <Label text="შენი ნათალური რუკა" styleClass="result-title"/>
+                                                <Region HBox.hgrow="ALWAYS"/>
+                                                <Button fx:id="saveButton" text="შენახვა" onAction="#saveChart"
+                                                        styleClass="secondary-button" disable="true"/>
+                                            </children>
+                                        </HBox>
+
+                                        <Label fx:id="chartPersonLabel"
+                                               text="შეავსე მონაცემები რუკის სანახავად"
+                                               styleClass="result-subtitle" wrapText="true"/>
+
+                                        <HBox spacing="18.0" alignment="CENTER" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
+                                                    <Canvas fx:id="chartCanvas" width="320.0" height="320.0"/>
+                                                    <Label text="ტროპიკული ზოდიაქო · თანაბარი სახლები"
+                                                           styleClass="chart-caption"/>
+                                                </VBox>
+
+                                                <ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+                                                            styleClass="planet-scroll" prefWidth="165.0"
+                                                            minWidth="155.0" VBox.vgrow="ALWAYS">
+                                                    <content>
+                                                        <VBox fx:id="planetList" spacing="9.0"
+                                                              styleClass="planet-list"/>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </HBox>
+
+                                        <HBox spacing="10.0">
+                                            <children>
+                                                <VBox styleClass="summary-card" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label text="მზე" styleClass="summary-heading"/>
+                                                        <Label fx:id="sunSummary" text="—" styleClass="summary-value"/>
+                                                    </children>
+                                                </VBox>
+                                                <VBox styleClass="summary-card" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label text="მთვარე" styleClass="summary-heading"/>
+                                                        <Label fx:id="moonSummary" text="—" styleClass="summary-value"/>
+                                                    </children>
+                                                </VBox>
+                                                <VBox styleClass="summary-card" HBox.hgrow="ALWAYS">
+                                                    <children>
+                                                        <Label text="ასცენდენტი" styleClass="summary-heading"/>
+                                                        <Label fx:id="ascSummary" text="—" styleClass="summary-value"/>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+
+                                        <Label fx:id="aspectSummary" text="ასპექტები გამოჩნდება რუკის შექმნის შემდეგ"
+                                               styleClass="aspect-summary" wrapText="true"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="MainBox" fx:controller="controllers.DailyPositionsController" stylesheets="@../styles/dashboard.css" prefWidth="1200.0" prefHeight="750.0" minWidth="850.0" minHeight="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+ <children><HBox AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" spacing="0.0">
+        <VBox fx:id="LeftVBox"
+                      minWidth="190.0"
+                      prefWidth="190.0"
+                      maxWidth="190.0">
+
+                    <children>
+
+                        <HBox fx:id="logoHbox"
+                              alignment="CENTER_LEFT"
+                              prefHeight="75.0"
+                              spacing="10.0">
+
+                            <children>
+
+                                <ImageView fx:id="logo"
+                                           fitHeight="34.0"
+                                           fitWidth="34.0"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/logoNew.png"/>
+                                    </image>
+                                </ImageView>
+
+                                <Label fx:id="appName"
+                                       text="ასტროსფერო"
+                                       styleClass="app-name"/>
+
+                            </children>
+                        </HBox>
+
+                        <VBox spacing="7.0">
+                        
+                        	<VBox.margin>
+        						<Insets top="18.0"/>
+    						</VBox.margin>
+
+                            <children>
+
+                                <HBox fx:id="hB1"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+
+                                        <Label text="🏠"
+                                               styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText1"
+                                               text="დაფა"
+                                               styleClass="menu-text">
+                                            <HBox.margin>
+                                                <Insets left="12.0"/>
+                                            </HBox.margin>
+                                        </Label>
+
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB2"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="◎" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText2"
+                                               text="ნათალური რუკა"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB3"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item active">
+
+                                    <children>
+                                        <Label text="🌎" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText3"
+                                               text="ამჟამინდელი პოზიციები"
+                                               styleClass="menu-text"
+                                               wrapText="true"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB4"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="📰" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText4"
+                                               text="ბლოგი"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB5"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="📝" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText5"
+                                               text="ჩემი ბლოგები"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB6"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="👤" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText6"
+                                               text="პროფილი"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                            </children>
+                        </VBox>
+
+                        <VBox VBox.vgrow="ALWAYS"/>
+
+                        <HBox fx:id="hB7"
+                              alignment="CENTER_LEFT"
+                              styleClass="menu-item">
+
+                            <children>
+                                <Label text="🚪" styleClass="menu-icon"/>
+
+                                <Label fx:id="menuText7"
+                                       text="გასვლა"
+                                       styleClass="menu-text"/>
+                            </children>
+                        </HBox>
+
+                        <VBox prefHeight="15.0"/>
+
+                    </children>
+                </VBox>
+ <VBox fx:id="RightVBox" spacing="18.0" HBox.hgrow="ALWAYS"><padding><Insets top="28.0" right="25.0" bottom="25.0" left="25.0"/></padding><children>
+  <VBox spacing="5.0"><children><Label text="ამჟამინდელი პლანეტარული პოზიციები" styleClass="welcome-title"/><Label text="აირჩიე თარიღი და ნახე პლანეტების მდებარეობა ზოდიაქოში." styleClass="welcome-subtitle"/></children></VBox>
+  <HBox alignment="CENTER_LEFT" spacing="12.0"><children><Label text="თარიღი" styleClass="section-title"/><DatePicker fx:id="datePicker"/><Label fx:id="dateLabel" styleClass="section-title"/></children></HBox>
+  <VBox styleClass="result-panel" spacing="12.0" VBox.vgrow="ALWAYS"><padding><Insets top="18.0" right="18.0" bottom="18.0" left="18.0"/></padding><children><Label text="პლანეტების განლაგება" styleClass="result-title"/><ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS"><content><VBox fx:id="positionsList" spacing="12.0"/></content></ScrollPane><Label fx:id="statusLabel" styleClass="status-label" wrapText="true"/></children></VBox>
+ </children></VBox></HBox></children></AnchorPane>

@@ -52,7 +52,7 @@ public class BirthChartController {
 	        hB3.setOnMouseClicked(event -> openPage("/fxml/DailyPositions.fxml"));
 	        hB4.setOnMouseClicked(event -> openPage("/fxml/MyBlogs.fxml"));
 	        hB5.setOnMouseClicked(event -> openPage("/fxml/MyBlogs.fxml"));
-	        hB6.setOnMouseClicked(event -> setActiveMenu(hB6));
+	        hB6.setOnMouseClicked(event -> openPage("/fxml/Profile.fxml"));
 	        hB7.setOnMouseClicked(event -> {
 	            UserSession.clear();
 	            openPage("/fxml/logIn.fxml");

@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import Validations.EmailValidation;
 import Validations.PasswordValidation;
+import daos.UserDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -95,6 +96,19 @@ public class logInController {
             isValid = false;
         } else {
             clearError(passwordFieldForLogIn, passwordError);
+        }
+        if (!isValid) return;
+        try {
+            int userId = UserDao.authenticate(email, password);
+            if (userId <= 0) {
+                showError(passwordFieldForLogIn, passwordError, "ელ-ფოსტა ან პაროლი არასწორია");
+                return;
+            }
+            UserSession.setUser(userId, UserDao.getUserNameById(userId));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Dashboard.fxml"));
+            ((Node) event.getSource()).getScene().setRoot(root);
+        } catch (Exception ex) {
+            showError(passwordFieldForLogIn, passwordError, "ავტორიზაცია ვერ შესრულდა. სცადე ხელახლა.");
         }
     }
 	

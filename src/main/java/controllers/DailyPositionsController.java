@@ -36,6 +36,7 @@ public class DailyPositionsController {
         hB3.setOnMouseClicked(e -> {});
         hB4.setOnMouseClicked(e -> open("/fxml/MyBlogs.fxml"));
         hB5.setOnMouseClicked(e -> open("/fxml/MyBlogs.fxml"));
+        hB6.setOnMouseClicked(e -> open("/fxml/Profile.fxml"));
         hB7.setOnMouseClicked(e -> { UserSession.clear(); open("/fxml/logIn.fxml"); });
         loadDate(LocalDate.now());
     }

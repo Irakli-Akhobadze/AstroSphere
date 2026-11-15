@@ -30,6 +30,16 @@ public class UserDao {
 		}
 	}
 	
+	public static String getUserNameById(int id) throws SQLException {
+		String sql = "SELECT userName FROM users WHERE userId = ?";
+		try (PreparedStatement statement = databaseConnector.getConnection().prepareStatement(sql)) {
+			statement.setInt(1, id);
+			try (ResultSet result = statement.executeQuery()) {
+				return result.next() ? result.getString("userName") : "";
+			}
+		}
+	}
+	
 	public static void setEmail(String email, int id) {
 		String query = "update users set email = ? where userId = ?";
 		
@@ -142,4 +152,15 @@ public class UserDao {
 
 	    return false;
 	}
+	
+	public static int authenticate(String email, String password) throws SQLException {
+        String sql = "SELECT userId FROM users WHERE email = ? AND passwordHash = ? LIMIT 1";
+        try (PreparedStatement statement = databaseConnector.getConnection().prepareStatement(sql)) {
+            statement.setString(1, email.trim());
+            statement.setString(2, password);
+            try (ResultSet result = statement.executeQuery()) {
+                return result.next() ? result.getInt("userId") : -1;
+            }
+        }
+    }
 }
