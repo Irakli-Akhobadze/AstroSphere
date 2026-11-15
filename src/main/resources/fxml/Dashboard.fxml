@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="MainBox"
+            fx:controller="controllers.DashboardController"
+            prefHeight="750.0"
+            prefWidth="1200.0"
+            minHeight="600.0"
+            minWidth="850.0"
+            stylesheets="@../styles/dashboard.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+
+        <HBox spacing="0.0"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0">
+
+            <children>
+
+                <VBox fx:id="LeftVBox"
+                      minWidth="190.0"
+                      prefWidth="190.0"
+                      maxWidth="190.0">
+
+                    <children>
+
+                        <HBox fx:id="logoHbox"
+                              alignment="CENTER_LEFT"
+                              prefHeight="75.0"
+                              spacing="10.0">
+
+                            <children>
+
+                                <ImageView fx:id="logo"
+                                           fitHeight="34.0"
+                                           fitWidth="34.0"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/logoNew.png"/>
+                                    </image>
+                                </ImageView>
+
+                                <Label fx:id="appName"
+                                       text="ასტროსფერო"
+                                       styleClass="app-name"/>
+
+                            </children>
+                        </HBox>
+
+                        <VBox spacing="7.0">
+                        
+                        	<VBox.margin>
+        						<Insets top="18.0"/>
+    						</VBox.margin>
+
+                            <children>
+
+                                <HBox fx:id="hB1"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item active">
+
+                                    <children>
+
+                                        <Label text="🏠"
+                                               styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText1"
+                                               text="დაფა"
+                                               styleClass="menu-text">
+                                            <HBox.margin>
+                                                <Insets left="12.0"/>
+                                            </HBox.margin>
+                                        </Label>
+
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB2"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="◎" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText2"
+                                               text="ნათალური რუკა"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB3"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="🌎" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText3"
+                                               text="ამჟამინდელი პოზიციები"
+                                               styleClass="menu-text"
+                                               wrapText="true"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB4"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="📰" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText4"
+                                               text="ბლოგი"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB5"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="📝" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText5"
+                                               text="ჩემი ბლოგები"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox fx:id="hB6"
+                                      alignment="CENTER_LEFT"
+                                      styleClass="menu-item">
+
+                                    <children>
+                                        <Label text="👤" styleClass="menu-icon"/>
+
+                                        <Label fx:id="menuText6"
+                                               text="პროფილი"
+                                               styleClass="menu-text"/>
+                                    </children>
+                                </HBox>
+
+                            </children>
+                        </VBox>
+
+                        <VBox VBox.vgrow="ALWAYS"/>
+
+                        <HBox fx:id="hB7"
+                              alignment="CENTER_LEFT"
+                              styleClass="menu-item">
+
+                            <children>
+                                <Label text="🚪" styleClass="menu-icon"/>
+
+                                <Label fx:id="menuText7"
+                                       text="გასვლა"
+                                       styleClass="menu-text"/>
+                            </children>
+                        </HBox>
+
+                        <VBox prefHeight="15.0"/>
+
+                    </children>
+                </VBox>
+
+                <VBox fx:id="RightVBox"
+                      spacing="23.0"
+                      HBox.hgrow="ALWAYS">
+
+                    <children>
+
+                        <VBox spacing="5.0">
+
+                            <children>
+
+                                <Label fx:id="welcomeText"
+                                       text="მოგესალმებით!"
+                                       styleClass="welcome-title"/>
+
+                                <Label fx:id="welcomeSubtitle"
+                                       text="მადლობა, რომ სარგებლობთ ჩვენი აპლიკაციით!"
+                                       styleClass="welcome-subtitle"/>
+
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="13.0">
+
+                            <children>
+
+                                <Label text="სწრაფი წვდომა"
+                                       styleClass="section-title"/>
+
+                                <HBox spacing="13.0"
+                                      alignment="CENTER">
+
+                                    <children>
+
+                                        <VBox fx:id="birthChartCard"
+                                              styleClass="quick-card"
+                                              alignment="CENTER"
+                                              spacing="10.0"
+                                              HBox.hgrow="ALWAYS">
+
+                                            <children>
+                                                <Label text="◎"
+                                                       styleClass="quick-icon"/>
+
+                                                <Label text="ნათალური რუკა"
+                                                       styleClass="card-title"/>
+
+                                                <Label text="შექმენი შენი ნათალური რუკა"
+                                                       styleClass="card-subtitle"
+                                                       wrapText="true"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox fx:id="dailyPositionsCard"
+                                              styleClass="quick-card"
+                                              alignment="CENTER"
+                                              spacing="10.0"
+                                              HBox.hgrow="ALWAYS">
+
+                                            <children>
+                                                <Label text="🌎"
+                                                       styleClass="quick-icon"/>
+
+                                                <Label text="ამჟამინდელი განლაგებები"
+                                                       styleClass="card-title"/>
+
+                                                <Label text="ნახე, რა ხდება დღეს ცის კაბადონზე"
+                                                       styleClass="card-subtitle"
+                                                       wrapText="true"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox fx:id="blogCard"
+                                              styleClass="quick-card"
+                                              alignment="CENTER"
+                                              spacing="10.0"
+                                              HBox.hgrow="ALWAYS">
+
+                                            <children>
+                                                <Label text="📰"
+                                                       styleClass="quick-icon"/>
+
+                                                <Label text="ბლოგი"
+                                                       styleClass="card-title"/>
+
+                                                <Label text="წაიკითხე სტატიები"
+                                                       styleClass="card-subtitle"
+                                                       wrapText="true"/>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox fx:id="myBlogsCard"
+                                              styleClass="quick-card"
+                                              alignment="CENTER"
+                                              spacing="10.0"
+                                              HBox.hgrow="ALWAYS">
+
+                                            <children>
+                                                <Label text="📝"
+                                                       styleClass="quick-icon"/>
+
+                                                <Label text="ჩემი ბლოგები"
+                                                       styleClass="card-title"/>
+
+                                                <Label text="მართე შენი სტატიები"
+                                                       styleClass="card-subtitle"
+                                                       wrapText="true"/>
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <VBox fx:id="highlightsBox"
+                              spacing="17.0"
+                              prefHeight="330.0"
+                              minHeight="290.0"
+                              maxHeight="370.0">
+
+                            <children>
+
+                                <Label text="დღევანდელი საინტერესო ასპექტები"
+                                       styleClass="section-title"/>
+
+                                <HBox spacing="20.0"
+                                      alignment="CENTER">
+
+                                    <children>
+
+                                        <VBox spacing="24.0"
+                                              HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <HBox alignment="CENTER_LEFT"
+                                                      spacing="15.0">
+
+                                                    <children>
+
+                                                        <Label text="☼"
+                                                               styleClass="planet-icon"/>
+
+                                                        <VBox spacing="5.0">
+
+                                                            <children>
+                                                                <Label text="Sun in Taurus"
+                                                                       styleClass="highlight-title"/>
+
+                                                                <Label text="The Sun is in practical and grounded Taurus."
+                                                                       styleClass="highlight-subtitle"
+                                                                       wrapText="true"/>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+
+                                                <HBox alignment="CENTER_LEFT"
+                                                      spacing="15.0">
+
+                                                    <children>
+
+                                                        <Label text="☾"
+                                                               styleClass="planet-icon"/>
+
+                                                        <VBox spacing="5.0">
+
+                                                            <children>
+                                                                <Label text="Moon in Leo"
+                                                                       styleClass="highlight-title"/>
+
+                                                                <Label text="The Moon is in warm and expressive Leo."
+                                                                       styleClass="highlight-subtitle"
+                                                                       wrapText="true"/>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+
+                                                <HBox alignment="CENTER_LEFT"
+                                                      spacing="15.0">
+
+                                                    <children>
+
+                                                        <Label text="♄"
+                                                               styleClass="planet-icon"/>
+
+                                                        <VBox spacing="5.0">
+
+                                                            <children>
+                                                                <Label text="Mercury in Gemini"
+                                                                       styleClass="highlight-title"/>
+
+                                                                <Label text="Mercury favors communication and curiosity."
+                                                                       styleClass="highlight-subtitle"
+                                                                       wrapText="true"/>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+
+                                            </children>
+                                        </VBox>
+
+                                        <StackPane fx:id="zodiacWheel"
+                                                   prefWidth="220.0"
+                                                   prefHeight="220.0"
+                                                   minWidth="180.0"
+                                                   minHeight="180.0"
+                                                   maxWidth="240.0"
+                                                   maxHeight="240.0">
+
+                                            <children>
+
+                                                <Circle radius="95.0"
+                                                        styleClass="zodiac-outer-circle"/>
+
+                                                <Circle radius="76.0"
+                                                        styleClass="zodiac-inner-circle"/>
+
+                                                <Circle radius="53.0"
+                                                        styleClass="zodiac-center-circle"/>
+
+                                                <Label text="♈    ♉    ♊"
+                                                       styleClass="zodiac-top"/>
+
+                                                <Label text="♓          ♋"
+                                                       styleClass="zodiac-sides"/>
+
+                                                <Label text="♒    ♑    ♐"
+                                                       styleClass="zodiac-bottom"/>
+
+                                                <Label text="☼"
+                                                       styleClass="zodiac-sun"/>
+
+                                            </children>
+                                        </StackPane>
+
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

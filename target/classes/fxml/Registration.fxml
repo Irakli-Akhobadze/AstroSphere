@@ -17,9 +17,9 @@
       <children>
         <VBox fx:id="leftLayout" alignment="CENTER" prefWidth="520.0" minWidth="0.0" HBox.hgrow="ALWAYS">
           <children>
-            <ImageView fx:id="imageForLeft" fitHeight="320.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageForLeft" fitHeight="420.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../images/logo.png"/>
+                <Image url="@../images/logoNew.png"/>
               </image>
             </ImageView>
             <Label fx:id="mainText" text="კეთილი იყოს შენი მობრძანება ასტროსფეროში!" wrapText="true" maxWidth="500.0"/>

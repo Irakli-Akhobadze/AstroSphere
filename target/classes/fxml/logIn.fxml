@@ -8,7 +8,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane fx:id="background" fx:controller="controllers.logInController" stylesheets="@../styles/styles.css" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="900.0" prefHeight="796.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
@@ -17,9 +16,9 @@
       <children>
         <VBox fx:id="leftLayout" alignment="CENTER" prefWidth="520.0" minWidth="0.0" HBox.hgrow="ALWAYS">
           <children>
-            <ImageView fx:id="imageForLeft" fitHeight="320.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageForLeft" fitHeight="420.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
               <image>
-                <Image url="@../images/logo.png"/>
+                <Image url="@../images/logoNew.png"/>
               </image>
             </ImageView>
             <Label fx:id="mainText" text="კეთილი იყოს შენი მობრძანება ასტროსფეროში!" wrapText="true" maxWidth="500.0"/>
@@ -29,17 +28,17 @@
                 <Image url="@../images/separator.png"/>
               </image>
             </ImageView>
-            
           </children>
         </VBox>
         <VBox fx:id="rightLayout" alignment="CENTER_LEFT" prefWidth="560.0" maxWidth="650.0" minWidth="0.0" HBox.hgrow="ALWAYS">
           <children>
-            
             <Label fx:id="rightLayoutLabel1" text="შესვლა"/>
             <Label fx:id="rightLayoutLabel2" text="სისტემაში შესასვლელად სწორად შეავსე მოცემული ველები" wrapText="true"/>
             <TextField fx:id="emailForLogIn" styleClass="rightLayoutTextField" promptText="ელ-ფოსტა" maxWidth="1.7976931348623157E308"/>
+            <Label fx:id="emailError" styleClass="error-label" visible="false" managed="false"/>
             <PasswordField fx:id="passwordFieldForLogIn" styleClass="rightLayoutTextField" promptText="პაროლი" maxWidth="1.7976931348623157E308"/>
-            <Button fx:id="logInButton" mnemonicParsing="false" text="შესვლა" maxWidth="1.7976931348623157E308"/>
+            <Label fx:id="passwordError" styleClass="error-label" visible="false" managed="false"/>
+            <Button fx:id="logInButton" onAction="#ClickOnLogIn" mnemonicParsing="false" text="შესვლა" maxWidth="1.7976931348623157E308"/>
             <VBox fx:id="signInOptsForRegistration" alignment="CENTER">
               <children>
                 <Label fx:id="optionForRegistration" text="არ გაქვს ანგარიში?"/>

@@ -1,6 +1,7 @@
 package daos;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.hibernate.Session;
@@ -98,7 +99,47 @@ public class UserDao {
 		}
 	}
 	
-	public static boolean userExists(String email, String passwordHash) {
+	public static boolean userWithEmailExists(String email) throws SQLException {
+		String sqlQuery = "select 1 from users where email = ? limit 1";
 		
+		try (PreparedStatement preparedStm = databaseConnector.getConnection().prepareStatement(sqlQuery)) {
+			preparedStm.setString(1, email);
+
+	        try (ResultSet rs = preparedStm.executeQuery()) {
+	            return rs.next();
+	        }
+
+		} 
+		
+		catch (SQLException e) {
+			e.printStackTrace();
+		
+		}
+		return false;
+		
+	}
+	
+	public static boolean userWithUsernameExists(String userName) {
+
+	    String sqlQuery = "SELECT 1 FROM users WHERE TRIM(userName) = TRIM(?) LIMIT 1";
+
+	    try (PreparedStatement preparedStm =
+	            databaseConnector.getConnection().prepareStatement(sqlQuery)) {
+
+	        preparedStm.setString(1, userName.trim());
+
+	        try (ResultSet rs = preparedStm.executeQuery()) {
+	            boolean exists = rs.next();
+
+	            System.out.println("Username found in database: " + exists);
+
+	            return exists;
+	        }
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+
+	    return false;
 	}
 }

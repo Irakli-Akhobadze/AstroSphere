@@ -2,11 +2,15 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import Validations.EmailValidation;
 import Validations.PasswordValidation;
 import daos.UserDao;
 import databaseConnection.databaseConnector;
+import emails.EmailSender;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.AddressException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -177,7 +181,7 @@ public class fxmlController {
     }
 
     @FXML
-    private void clickRegistrationBtn(ActionEvent event) throws IOException {
+    private void clickRegistrationBtn(ActionEvent event) throws IOException, AddressException, MessagingException, SQLException {
 
         String firstName = name.getText().trim();
         String lastName = lastN.getText().trim();
@@ -243,10 +247,31 @@ public class fxmlController {
             return;
         }
         
+        boolean errorsExist = false;
+        
+        if (UserDao.userWithEmailExists(email)) {
+        	showError(emailField, emailError, "ასეთი ელ-ფოსტით უკვე არსებობს მომხმარებელი! გთხოვთ, თავიდან შეიყვანეთ სხვა ელ-ფოსტა");
+        	errorsExist = true;
+        }
+        
+        if (UserDao.userWithUsernameExists(username)) {
+        	showError(userName, usernameError, "ასეთი ზედმეტსახელით უკვე არსებობს მომხმარებელი! გთხოვთ, თავიდან შეიყვანეთ სხვა ზედმეტსახელი");
+        }
+        
+        if (errorsExist) {
+        	return;
+        }
+        
         UserDao.insertInto(username, firstName, lastName, confirmPassword, email);
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/logIn.fxml"));
         Scene currentScene = ((Node) event.getSource()).getScene();
         currentScene.setRoot(root);
+        
+        String subject = "ასტროსფეროზე რეგისტრაცია";
+        String bodyText = "გილოცავთ! თქვენ წარმატებით დარეგისტრირდით ასტროსფეროზე!"
+        		+ " სისტემაში შესასვლელად, გთხოვთ დაბრუნდით აპლიკაციაში და გაიარეთ ავტორიზაცია!";
+        
+        EmailSender.sendEmail(email, subject, bodyText);
 
     }
 
